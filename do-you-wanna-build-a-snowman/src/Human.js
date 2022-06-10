@@ -7,18 +7,31 @@ class Human {
     this.materials = {
       snowballs: 0,
       coal: 0,
-      buttons: 0,
+      buttons: 0, 
       carrots: 0
-    }
-  }
-  gatherMaterials(material, number) {
-    this.materials[material] = this.materials[ 0,0, 5, 1];
+    };
   }
 
-  buildASnowman() {
-    var snowman = new Snowman(this.materials[4, 1, 3]);
-    return snowman;
+  gatherMaterials(materialType, number) {
+    this.materials[materialType] += number;
   }
-}
+
+  buildASnowman(snowmanDetails) {
+    var otherSnowman = new Snowman(this.materials);
+    return otherSnowman;
+  }
+
+  placeMagicHat() {
+    var madeSnowman = new Snowman(this.materials)
+      madeSnowman.canWearMagicHat()
+    if (!madeSnowman.magicHat) {
+      return 'I guess I didn\'t build it correctly.'
+    } else {
+      return 'Woah, this snowman is coming to life!'
+    }
+  }
+ }
+
+
 
 module.exports = Human;
